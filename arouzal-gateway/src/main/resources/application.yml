@@ -1,0 +1,27 @@
+server:
+  port: ${config.server.port:9090}
+spring:
+  application:
+    name: arouzal_gateway
+  datasource:
+    url: ${config.spring.datasource.url:jdbc:mysql://127.0.0.1:3306/arouzal}
+    type: com.zaxxer.hikari.HikariDataSource
+    username: ${config.spring.datasource.username:root}
+    password: ${config.spring.datasource.password:root}
+    driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+## 'hibernate.dialect.storage_engine=innodb' is not effective, use database-platform variable.
+#        dialect:
+#          storage-engine: innodb
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+  data:
+    mongodb:
+      uri: ${config.spring.data.mongodb.uri:mongodb://127.0.0.1:27017/arouzal}
+

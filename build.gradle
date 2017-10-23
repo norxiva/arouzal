@@ -21,7 +21,7 @@ version '1.0-SNAPSHOT'
 
 allprojects {
 
-    ext.junitVersion = '4.12'
+    ext.lombokVersion = '1.16.18'
 //    ext.springBootVersion = '1.5.8.RELEASE'
     ext.springBootVersion = '2.0.0.M5'
 
@@ -52,15 +52,15 @@ allprojects {
     configurations {
         all*.exclude module: 'spring-boot-starter-tomcat'
     }
-
-    dependencies {
-        testCompile "junit:junit:${junitVersion}"
-    }
 }
 
+// spring web framework
 configure(subprojects.findAll() {it.name == 'arouzal-gateway'}) {
     dependencies {
-        compile 'org.springframework.boot:spring-boot-starter-web'
-        compile 'org.springframework.boot:spring-boot-starter-jetty'
+//        compile 'org.springframework.boot:spring-boot-starter-web'
+//        compile 'org.springframework.boot:spring-boot-starter-jetty'
     }
 }
+
+
+
