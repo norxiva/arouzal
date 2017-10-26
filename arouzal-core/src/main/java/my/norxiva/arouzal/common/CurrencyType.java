@@ -1,4 +1,4 @@
-package my.norxiva.arouzal.gateway.common;
+package my.norxiva.arouzal.common;
 
 public enum CurrencyType {
 

@@ -1,4 +1,4 @@
-package my.norxiva.arouzal.gateway.payment;
+package my.norxiva.arouzal.payment;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

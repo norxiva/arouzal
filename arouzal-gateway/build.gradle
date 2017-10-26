@@ -1,19 +1,9 @@
 dependencies {
+    compile project(':arouzal-core')
     compile 'org.springframework.boot:spring-boot-starter-web'
     compile 'org.springframework.boot:spring-boot-starter-jetty'
     compile 'org.springframework.boot:spring-boot-starter-webflux'
 
     compile 'org.springframework.boot:spring-boot-devtools'
-
-    compile 'org.springframework.boot:spring-boot-starter-data-jpa'
-    compile 'mysql:mysql-connector-java'
-
-//    compile 'org.springframework.boot:spring-boot-starter-data-mongodb'
-    compile 'org.springframework.boot:spring-boot-starter-data-mongodb-reactive'
-    compile 'org.springframework.boot:spring-boot-starter-data-redis'
-
-    compile "org.projectlombok:lombok:${lombokVersion}"
-
-    testCompile 'org.springframework.boot:spring-boot-starter-test'
 
 }

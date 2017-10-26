@@ -1,13 +1,10 @@
-package my.norxiva.arouzal.gateway.payment;
+package my.norxiva.arouzal.payment;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
-import my.norxiva.arouzal.gateway.common.ChannelType;
-import my.norxiva.arouzal.gateway.common.CurrencyType;
-import my.norxiva.arouzal.gateway.common.PaymentType;
-import my.norxiva.arouzal.gateway.common.TransactionType;
-import my.norxiva.arouzal.gateway.util.JacksonUtils;
+import my.norxiva.arouzal.common.*;
+import my.norxiva.arouzal.util.JacksonUtils;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -63,8 +60,9 @@ public class PaymentOrder {
     @Column(name = "update_time", nullable = false)
     private LocalDateTime updateTime;
 
+    @Enumerated(EnumType.STRING)
     @Column(length = 32, nullable = false)
-    private String status;
+    private OrderStatus status;
 
     @Column(name = "callback_url")
     private String callbackUrl;

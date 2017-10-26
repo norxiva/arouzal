@@ -1,6 +1,6 @@
 package my.norxiva.arouzal.gateway.endpoint;
 
-import my.norxiva.arouzal.gateway.payment.PaymentOrderManager;
+import my.norxiva.arouzal.payment.PaymentOrderManager;
 import org.springframework.core.io.buffer.DataBuffer;
 import org.springframework.core.io.buffer.DataBufferFactory;
 import org.springframework.core.io.buffer.DefaultDataBufferFactory;

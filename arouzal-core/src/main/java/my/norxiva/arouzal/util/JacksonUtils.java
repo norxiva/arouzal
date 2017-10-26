@@ -1,4 +1,4 @@
-package my.norxiva.arouzal.gateway.util;
+package my.norxiva.arouzal.util;
 
 public class JacksonUtils {
 
