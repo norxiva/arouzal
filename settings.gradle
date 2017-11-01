@@ -1,4 +1,6 @@
 rootProject.name = 'arouzal'
 include 'arouzal-gateway'
 include 'arouzal-core'
+include 'arouzal-channel'
+include 'arouzal-commons'
 

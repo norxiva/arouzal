@@ -1,19 +1,19 @@
 buildscript {
-    ext.dependencyPluginVersion = '1.0.3.RELEASE'
+  ext.dependencyPluginVersion = '1.0.3.RELEASE'
 //    ext.springBootVersion = '1.5.8.RELEASE'
-    ext.springBootVersion = '2.0.0.M5'
+  ext.springBootVersion = '2.0.0.M5'
 
-    repositories {
-        mavenLocal()
-        maven { url 'https://repo.spring.io/libs-milestone' }
-        mavenCentral()
-        jcenter()
-    }
+  repositories {
+    mavenLocal()
+    maven { url 'https://repo.spring.io/libs-milestone' }
+    mavenCentral()
+    jcenter()
+  }
 
-    dependencies {
-        classpath "io.spring.gradle:dependency-management-plugin:${dependencyPluginVersion}"
-        classpath "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}"
-    }
+  dependencies {
+    classpath "io.spring.gradle:dependency-management-plugin:${dependencyPluginVersion}"
+    classpath "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}"
+  }
 }
 
 group 'my.norxiva'
@@ -21,45 +21,45 @@ version '1.0-SNAPSHOT'
 
 allprojects {
 
-    ext.lombokVersion = '1.16.18'
+  ext.lombokVersion = '1.16.18'
 //    ext.springBootVersion = '1.5.8.RELEASE'
-    ext.springBootVersion = '2.0.0.M5'
+  ext.springBootVersion = '2.0.0.M5'
 
-    apply plugin: 'java'
-    apply plugin: 'eclipse'
-    apply plugin: 'idea'
+  apply plugin: 'java'
+  apply plugin: 'eclipse'
+  apply plugin: 'idea'
 
-    apply plugin: 'io.spring.dependency-management'
-    apply plugin: 'org.springframework.boot'
+  apply plugin: 'io.spring.dependency-management'
+  apply plugin: 'org.springframework.boot'
 
-    [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
-    sourceCompatibility = '1.8'
-    targetCompatibility = '1.8'
+  [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+  sourceCompatibility = '1.8'
+  targetCompatibility = '1.8'
 
-    dependencyManagement {
-        imports {
-            mavenBom "org.springframework.boot:spring-boot-starter-parent:${springBootVersion}"
-        }
+  dependencyManagement {
+    imports {
+      mavenBom "org.springframework.boot:spring-boot-starter-parent:${springBootVersion}"
     }
+  }
 
-    repositories {
-        mavenLocal()
-        maven { url 'https://repo.spring.io/libs-milestone' }
-        mavenCentral()
-        jcenter()
-    }
+  repositories {
+    mavenLocal()
+    maven { url 'https://repo.spring.io/libs-milestone' }
+    mavenCentral()
+    jcenter()
+  }
 
-    configurations {
-        all*.exclude module: 'spring-boot-starter-tomcat'
-    }
+  configurations {
+    all*.exclude module: 'spring-boot-starter-tomcat'
+  }
 }
 
 // spring web framework
-configure(subprojects.findAll() {it.name == 'arouzal-gateway'}) {
-    dependencies {
+configure(subprojects.findAll() { it.name == 'arouzal-gateway' }) {
+  dependencies {
 //        compile 'org.springframework.boot:spring-boot-starter-web'
 //        compile 'org.springframework.boot:spring-boot-starter-jetty'
-    }
+  }
 }
 
 

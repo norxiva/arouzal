@@ -21,42 +21,42 @@ import java.nio.charset.StandardCharsets;
 @RequestMapping("/payment")
 public class PaymentEndpoint {
 
-    private DataBufferFactory dataBufferFactory = new DefaultDataBufferFactory();
+  private DataBufferFactory dataBufferFactory = new DefaultDataBufferFactory();
 
-    private PaymentOrderManager paymentOrderManager;
+  private PaymentOrderManager paymentOrderManager;
 
-    public PaymentEndpoint(PaymentOrderManager paymentOrderManager) {
-        this.paymentOrderManager = paymentOrderManager;
-    }
+  public PaymentEndpoint(PaymentOrderManager paymentOrderManager) {
+    this.paymentOrderManager = paymentOrderManager;
+  }
 
-    @RequestMapping("test")
-    public String test(){
-        return "Just for test!";
-    }
+  @RequestMapping("test")
+  public String test() {
+    return "Just for test!";
+  }
 
-    @GetMapping("hello")
-    public Mono<String> hello(@RequestParam String name) {
-        return Mono.just("Hello, " + name + "!");
-    }
+  @GetMapping("hello")
+  public Mono<String> hello(@RequestParam String name) {
+    return Mono.just("Hello, " + name + "!");
+  }
 
-    @GetMapping("waiting")
-    public Mono<String> waiting(){
-        return Mono.never();
-    }
+  @GetMapping("waiting")
+  public Mono<String> waiting() {
+    return Mono.never();
+  }
 
-    // there is a NoSuchMethodException throwing here.
-    @RequestMapping("/exchange")
-    public Mono<Void> exchange(ServerWebExchange exchange) {
-        ServerHttpResponse response = exchange.getResponse();
-        response.setStatusCode(HttpStatus.OK);
-        response.getHeaders().setContentType(MediaType.TEXT_PLAIN);
-        DataBuffer buf = dataBufferFactory.wrap("Hello from exchange".getBytes(StandardCharsets.UTF_8));
-        return response.writeWith(Flux.just(buf));
-    }
+  // there is a NoSuchMethodException throwing here.
+  @RequestMapping("/exchange")
+  public Mono<Void> exchange(ServerWebExchange exchange) {
+    ServerHttpResponse response = exchange.getResponse();
+    response.setStatusCode(HttpStatus.OK);
+    response.getHeaders().setContentType(MediaType.TEXT_PLAIN);
+    DataBuffer buf = dataBufferFactory.wrap("Hello from exchange".getBytes(StandardCharsets.UTF_8));
+    return response.writeWith(Flux.just(buf));
+  }
 
-    @RequestMapping("/error")
-    public Mono<String> error() {
-        return Mono.error(new IllegalArgumentException("My custom error message"));
-    }
+  @RequestMapping("/error")
+  public Mono<String> error() {
+    return Mono.error(new IllegalArgumentException("My custom error message"));
+  }
 
 }

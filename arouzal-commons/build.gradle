@@ -1,0 +1,4 @@
+dependencies {
+  compile "org.projectlombok:lombok:${lombokVersion}"
+  testCompile 'org.springframework.boot:spring-boot-starter-test'
+}

@@ -1,13 +1,10 @@
 dependencies {
-    compile 'org.springframework.boot:spring-boot-starter-json'
-    compile 'org.springframework.boot:spring-boot-starter-data-jpa'
-    compile 'mysql:mysql-connector-java'
+  compile project(':arouzal-commons')
+  compile 'org.springframework.boot:spring-boot-starter-json'
+  compile 'org.springframework.boot:spring-boot-starter-data-jpa'
+  compile 'mysql:mysql-connector-java'
 
 //    compile 'org.springframework.boot:spring-boot-starter-data-mongodb'
-    compile 'org.springframework.boot:spring-boot-starter-data-mongodb-reactive'
-    compile 'org.springframework.boot:spring-boot-starter-data-redis'
-
-    compile "org.projectlombok:lombok:${lombokVersion}"
-
-    testCompile 'org.springframework.boot:spring-boot-starter-test'
+  compile 'org.springframework.boot:spring-boot-starter-data-mongodb-reactive'
+  compile 'org.springframework.boot:spring-boot-starter-data-redis'
 }
