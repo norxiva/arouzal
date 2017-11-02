@@ -13,7 +13,9 @@ dependencies {
   compile 'org.springframework.boot:spring-boot-starter-data-mongodb-reactive'
   compile 'org.springframework.boot:spring-boot-starter-data-redis'
 
-  compile "org.projectlombok:lombok:${lombokVersion}"
+  compile "org.projectlombok:lombok"
+  compile 'org.apache.commons:commons-lang3'
+
   testCompile 'org.springframework.boot:spring-boot-starter-test'
 
 }

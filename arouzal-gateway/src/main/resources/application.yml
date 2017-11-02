@@ -23,5 +23,5 @@ spring:
     database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
   data:
     mongodb:
-      uri: ${config.spring.data.mongodb.uri:mongodb://127.0.0.1:27017/arouzal}
+      uri: ${config.spring.data.mongodb.uri:mongodb://127.0.0.1:27017/local}
 

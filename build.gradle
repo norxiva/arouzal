@@ -21,7 +21,6 @@ version '1.0-SNAPSHOT'
 
 allprojects {
 
-  ext.lombokVersion = '1.16.18'
 //    ext.springBootVersion = '1.5.8.RELEASE'
   ext.springBootVersion = '2.0.0.M5'
 
