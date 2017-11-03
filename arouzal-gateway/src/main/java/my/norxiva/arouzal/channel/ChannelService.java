@@ -2,7 +2,6 @@ package my.norxiva.arouzal.channel;
 
 import my.norxiva.arouzal.commons.ChannelType;
 import org.springframework.stereotype.Component;
-import reactor.core.publisher.Mono;
 
 @Component
 public class ChannelService {
@@ -13,19 +12,19 @@ public class ChannelService {
     this.channelRepository = channelRepository;
   }
 
-  public Mono<Channel> rxFind(ChannelType type){
+  public Channel find(ChannelType type){
     return channelRepository.findByType(type);
   }
 
-  public Mono<Channel> rxFind(String id){
-    return channelRepository.findById(id);
+  public Channel find(String id){
+    return channelRepository.findOne(id);
   }
-  public Mono<Channel> rxSave(Channel entity){
+  public Channel save(Channel entity){
     return channelRepository.save(entity);
   }
 
-  public Mono<Void> rxDelete(String id){
-    return channelRepository.deleteById(id);
+  public void delete(String id){
+    channelRepository.delete(id);
   }
 
 }

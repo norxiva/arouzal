@@ -1,11 +1,10 @@
 package my.norxiva.arouzal.channel;
 
 import my.norxiva.arouzal.commons.ChannelType;
-import org.springframework.data.mongodb.repository.ReactiveMongoRepository;
-import reactor.core.publisher.Mono;
+import org.springframework.data.mongodb.repository.MongoRepository;
 
-public interface ChannelRepository extends ReactiveMongoRepository<Channel, String> {
+public interface ChannelRepository extends MongoRepository<Channel, String> {
 
-  Mono<Channel> findByType(ChannelType type);
+  Channel findByType(ChannelType type);
 
 }

@@ -4,7 +4,6 @@ import my.norxiva.arouzal.channel.Channel;
 import my.norxiva.arouzal.channel.ChannelService;
 import my.norxiva.arouzal.commons.ChannelType;
 import org.springframework.web.bind.annotation.*;
-import reactor.core.publisher.Mono;
 
 @RestController
 @RequestMapping("channels")
@@ -18,23 +17,23 @@ public class ChannelEndpoint {
 
 
   @GetMapping("{type}")
-  public Mono<Channel> find(@PathVariable ChannelType type){
-    return channelService.rxFind(type);
+  public Channel find(@PathVariable ChannelType type){
+    return channelService.find(type);
   }
 
   @GetMapping("/id/{id}")
-  public Mono<Channel> findById(@PathVariable String id){
-    return channelService.rxFind(id);
+  public Channel findById(@PathVariable String id){
+    return channelService.find(id);
   }
 
   @PostMapping
-  public Mono<Channel> create(@RequestBody Channel channel){
-    return channelService.rxSave(channel);
+  public Channel create(@RequestBody Channel channel){
+    return channelService.save(channel);
   }
 
   @DeleteMapping("{id}")
-  public Mono<Void> delete(@PathVariable String id){
-    return channelService.rxDelete(id);
+  public void delete(@PathVariable String id){
+    channelService.delete(id);
   }
 
 
