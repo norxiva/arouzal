@@ -1,0 +1,5 @@
+dependencies {
+  compile "com.typesafe.akka:akka-actor_2.12:${akkaVersion}"
+  testCompile "com.typesafe.akka:akka-testkit_2.12:${akkaVersion}"
+  testCompile 'junit:junit'
+}
