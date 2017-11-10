@@ -24,6 +24,7 @@ allprojects {
 
   ext.akkaVersion = '2.5.6'
   ext.commonsLang3Version = '3.6'
+  ext.junitVersion = '4.12'
   ext.springBootVersion = '1.5.8.RELEASE'
 //  ext.springBootVersion = '2.0.0.M5'
 
